@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block title %}Message Revealed{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="cyber-card">
+        <div class="card-inner">
+          <div class="text-center mb-4">
+            <h2 class="cyber-title">> Message_Extracted_</h2>
+            <p class="terminal-text">Steganographic decoding complete</p>
+          </div>
+
+          <div class="system-status mb-4">
+            <div class="terminal-window">
+              <div class="terminal-header">Extracted Message</div>
+              <div class="terminal-body">
+                <p class="terminal-line">> BEGIN_MESSAGE</p>
+                <pre class="terminal-output">{{ message }}</pre>
+                <p class="terminal-line">> END_MESSAGE</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a href="{{ url_for('reveal') }}" class="cyber-btn">
+              <span><i class="fas fa-redo"></i> Extract Another Message</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

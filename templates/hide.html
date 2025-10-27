@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+
+{% block title %}Steganography - Hide Message{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="cyber-card">
+        <div class="card-inner">
+          <div class="text-center mb-4">
+            <h2 class="cyber-title">> Steganography Encoder_</h2>
+            <p class="terminal-text">Initialize message encryption sequence</p>
+          </div>
+
+          <form method="post" enctype="multipart/form-data" class="steganography-form">
+            <div class="mb-4">
+              <div class="upload-area">
+                <div class="card-icon">
+                  <i class="fas fa-file-image"></i>
+                </div>
+                <h3 class="terminal-text">Select Carrier Image</h3>
+                <p>Drag and drop your image here or click to browse</p>
+                <input type="file" name="image" accept="image/png, image/jpeg" class="form-control">
+              </div>
+              <div class="format-info">
+                <span class="badge bg-warning">Note</span>
+                <small class="text-muted">PNG recommended (lossless). JPG will be converted to PNG.</small>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="message" class="form-label">Secret Message</label>
+              <textarea name="message" id="message" class="form-control" rows="4"
+                placeholder="Enter your classified message here..."></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="cyber-btn">
+                <span>Initialize Encoding</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="system-status mt-4">
+            <div class="terminal-window">
+              <div class="terminal-header">Encoding Parameters</div>
+              <div class="terminal-body">
+                <p class="terminal-line">Encryption: <span class="status-ok">LSB Steganography</span></p>
+                <p class="terminal-line">Format: <span class="status-ok">PNG (Lossless)</span></p>
+                <p class="terminal-line">Status: <span class="status-ok">Ready</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

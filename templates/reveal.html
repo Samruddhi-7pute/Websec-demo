@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Steganography - Reveal Message{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="cyber-card decode">
+        <div class="card-inner">
+          <div class="text-center mb-4">
+            <h2 class="cyber-title">> Steganography_Decoder_</h2>
+            <p class="terminal-text">Initialize message extraction sequence</p>
+          </div>
+
+          <form method="post" enctype="multipart/form-data" class="steganography-form">
+            <div class="mb-4">
+              <div class="upload-area">
+                <div class="card-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="terminal-text">Select Encoded Image</h3>
+                <p>Drag and drop your encoded image here or click to browse</p>
+                <input type="file" name="image" accept="image/*" class="form-control">
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="cyber-btn">
+                <span><i class="fas fa-key"></i> Begin Extraction</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="system-status mt-4">
+            <div class="terminal-window">
+              <div class="terminal-header">Decoding Parameters</div>
+              <div class="terminal-body">
+                <p class="terminal-line">Decryption: <span class="status-ok">LSB Steganography</span></p>
+                <p class="terminal-line">Format: <span class="status-ok">All Image Types</span></p>
+                <p class="terminal-line">Status: <span class="status-ok">Ready</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

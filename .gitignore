@@ -1,0 +1,27 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+env/
+ENV/
+
+# Database files
+*.db
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Environment variables
+.env
+
+# Uploaded files directory (since this will be user-generated content)
+uploads/*
+!uploads/.gitkeep
+
+# Operating System files
+.DS_Store
+Thumbs.db

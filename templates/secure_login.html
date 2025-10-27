@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Secure Login{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="cyber-card secure">
+        <div class="card-inner">
+          <div class="text-center mb-4">
+            <h2 class="cyber-title">> Secure_Authentication_</h2>
+            <p class="terminal-text">Enhanced security protocols active</p>
+          </div>
+
+          <div class="system-status mb-4">
+            <div class="terminal-window">
+              <div class="terminal-header">System Info</div>
+              <div class="terminal-body">
+                <p class="terminal-line">Demo Credentials:</p>
+                <p class="terminal-line">Username: <span class="status-ok">demo</span></p>
+                <p class="terminal-line">Password: <span class="status-ok">demo123</span></p>
+              </div>
+            </div>
+          </div>
+
+          <form method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter username"
+                  required>
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-lock"></i></span>
+                <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"
+                  required>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="cyber-btn success">
+                <span><i class="fas fa-shield-alt"></i> Secure Login</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-4">
+            {% for category, msg in get_flashed_messages(with_categories=true) %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ msg }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

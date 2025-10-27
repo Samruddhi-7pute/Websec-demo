@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block title %}Steganography - Operation Complete{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-8">
+      <div class="cyber-card">
+        <div class="card-inner">
+          <div class="text-center mb-4">
+            <h2 class="cyber-title">> Operation_Complete_</h2>
+            <p class="terminal-text">Message successfully encoded</p>
+          </div>
+
+          <div class="system-status mb-4">
+            <div class="terminal-window">
+              <div class="terminal-header">Operation Status</div>
+              <div class="terminal-body">
+                <p class="terminal-line">Status: <span class="status-ok">SUCCESS</span></p>
+                <p class="terminal-line">Output: <span class="status-ok">{{ stego_filename }}</span></p>
+                <p class="terminal-line">Encryption: <span class="status-ok">LSB Steganography</span></p>
+              </div>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <a href="{{ url_for('uploaded_file', filename=stego_filename) }}" class="cyber-btn success me-2">
+              <span><i class="fas fa-download"></i> Download Encoded Image</span>
+            </a>
+            <a href="{{ url_for('hide') }}" class="cyber-btn mt-2">
+              <span><i class="fas fa-redo"></i> Hide Another Message</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

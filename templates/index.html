@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+
+{% block title %}Cybersecurity Demo{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="text-center mb-5">
+    <h1 class="cyber-title">> CyberSecurity Training Ground_</h1>
+    <p class="terminal-text mt-3">Select your mission objective below</p>
+  </div>
+
+  <div class="row">
+    <!-- SQL Injection Training Section -->
+    <div class="col-md-6 mb-4">
+      <div class="feature-section">
+        <h2 class="section-title mb-4">SQL Injection Lab</h2>
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="cyber-card vulnerable">
+              <div class="card-inner">
+                <div class="card-icon">
+                  <i class="fas fa-bug"></i>
+                </div>
+                <h3 style="color:#ff3333;">VULNERABLE LOGIN</h3>
+                <p>Experience SQL injection vulnerabilities firsthand. Learn how attackers exploit unsanitized inputs.
+                </p>
+                <a href="{{ url_for('vulnerable_login') }}" class="cyber-btn danger">
+                  <span>Launch Attack Simulation</span>
+                  <div class="cyber-btn-border"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="cyber-card secure">
+              <div class="card-inner">
+                <div class="card-icon">
+                  <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure Login</h3>
+                <p>Learn proper security implementations and how to prevent SQL injection attacks.</p>
+                <a href="{{ url_for('secure_login') }}" class="cyber-btn success">
+                  <span>Access Secure System</span>
+                  <div class="cyber-btn-border"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Steganography Training Section -->
+    <div class="col-md-6 mb-4">
+      <div class="feature-section">
+        <h2 class="section-title mb-4">Steganography Lab</h2>
+        <div class="row g-4">
+          <div class="col-12">
+            <div class="cyber-card encode">
+              <div class="card-inner">
+                <div class="card-icon">
+                  <i class="fas fa-eye-slash"></i>
+                </div>
+                <h3>Message Encryption</h3>
+                <p>Hide secret messages within images using advanced steganography techniques.</p>
+                <a href="{{ url_for('hide') }}" class="cyber-btn primary">
+                  <span>Initialize Encoding</span>
+                  <div class="cyber-btn-border"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="cyber-card decode">
+              <div class="card-inner">
+                <div class="card-icon">
+                  <i class="fas fa-eye"></i>
+                </div>
+                <h3>Message Extraction</h3>
+                <p>Reveal hidden messages from steganographic images using decoding algorithms.</p>
+                <a href="{{ url_for('reveal') }}" class="cyber-btn info">
+                  <span>Begin Extraction</span>
+                  <div class="cyber-btn-border"></div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="system-status">
+    <div class="terminal-window">
+      <div class="terminal-header">System Status</div>
+      <div class="terminal-body">
+        <p class="terminal-line">System: <span class="status-ok">ONLINE</span></p>
+        <p class="terminal-line">Security Level: <span class="status-warning">TRAINING MODE</span></p>
+        <p class="terminal-line">Labs Available: <span class="status-ok">4/4</span></p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

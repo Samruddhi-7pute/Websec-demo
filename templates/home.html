@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+
+{% block title %}Secure Message Portal{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2>Welcome to the Secure Portal!</h2>
+    <p class="intro-message">You have successfully logged in, potentially through a SQL Injection attack. This is where
+        you can demonstrate cryptography and steganography.</p>
+
+    <div class="card">
+        <h3>1. Hide Encrypted Message</h3>
+        <form action="/hide" method="post">
+            <label for="message">Enter Secret Message:</label>
+            <input type="text" id="message" name="message" placeholder="Type your message here">
+            <label for="image">Image to use:</label>
+            <input type="text" id="image" name="image_path" value="image.png">
+            <button type="submit">Hide Message</button>
+        </form>
+    </div>
+
+    <div class="card">
+        <h3>2. Reveal Message</h3>
+        <form action="/reveal" method="post">
+            <label for="encoded_image">Encoded Image to use:</label>
+            <input type="text" id="encoded_image" name="encoded_image_path" value="encoded_image.png">
+            <button type="submit">Reveal Message</button>
+        </form>
+    </div>
+
+    {% if encoded_path %}
+    <div class="result-box">
+        <h3>Message Hidden!</h3>
+        <p>The encoded image is saved as: <b>{{ encoded_path }}</b></p>
+    </div>
+    {% endif %}
+
+    {% if revealed_message %}
+    <div class="result-box">
+        <h3>Revealed Message:</h3>
+        <p><b>{{ revealed_message }}</b></p>
+    </div>
+    {% endif %}
+</div>
+
+
+<footer class="main-footer">
+    <p>&copy; 2025 CyberSafe. All rights reserved.</p>
+</footer>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block title %}Vulnerable Login{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="cyber-card vulnerable">
+        <div class="card-inner">
+          <div class="text-center mb-4">
+            <h2 class="cyber-title">> Vulnerable_System_</h2>
+            <p class="terminal-text text-warning" style="font-size: 1.2rem; opacity: 0.9;">WARNING: Insecure
+              authentication in use</p>
+          </div>
+
+          <div class="system-status mb-4">
+            <div class="terminal-window">
+              <div class="terminal-header">Exploit Information</div>
+              <div class="terminal-body">
+                <p class="terminal-line">Vulnerability: <span class="status-error">SQL Injection</span></p>
+                <p class="terminal-line">Test Payload: <span class="status-warning">' OR '1'='1</span></p>
+                <p class="terminal-line">Status: <span class="status-error">VULNERABLE</span></p>
+              </div>
+            </div>
+          </div>
+
+          <form method="post">
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-user-secret"></i></span>
+                <input type="text" class="form-control" id="username" name="username"
+                  placeholder="Try SQL injection here...">
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="fas fa-unlock"></i></span>
+                <input type="text" class="form-control" id="password" name="password" placeholder="Any password...">
+              </div>
+            </div>
+
+            <div class="text-center">
+              <button type="submit" class="cyber-btn danger">
+                <span><i class="fas fa-radiation"></i> Exploit System</span>
+              </button>
+            </div>
+          </form>
+
+          <div class="mt-4">
+            {% for category, msg in get_flashed_messages(with_categories=true) %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ msg }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
