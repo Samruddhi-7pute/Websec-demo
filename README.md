@@ -1,9 +1,13 @@
-# Cybersecurity Demonstration Project
+# Webapp Security Demonstration Project
 
 A small Flask web app demoing:
 - SQL Injection (vulnerable login)
 - SQL Injection Prevention (secure login with parameterized queries + hashed passwords)
 - Steganography (hide/reveal short messages in images)
+
+## Project Description
+
+This compact Flask web application is designed for hands-on learning. It demonstrates SQL Injection via an intentionally vulnerable login, how to prevent it using secure coding practices (parameterized queries and hashed passwords), and simple image steganography techniques for hiding and revealing short messages. The project allows learners to see insecure and secure implementations side-by-side.  
 
 ## 🔹 Features
 1. **SQL Injection (Vulnerable Login)**  
